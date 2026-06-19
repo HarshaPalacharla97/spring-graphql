@@ -1,0 +1,35 @@
+type Aircraft{
+    id : ID,
+    tailNumber : String,
+    aircraftModel : String,
+    aircraftManufacturer : AircraftManufacturer
+    serialNumber : String
+    manufactureDate : String
+    aircraftStatus : AircraftStatus
+    currentLocation : String
+    totalFlightHours : String
+    totalFlightCycles : String
+    lastMaintenanceDate : String
+    nextMaintenanceDueDate : String
+}
+
+type Query{
+    getAircraftInformation(tailNumber : String) : Aircraft
+} 
+
+enum AircraftManufacturer{
+    AIRBUS,
+    ATR,
+    BOEING,
+    BOMBARDIER,
+    EMBRAER,
+}
+
+enum AircraftStatus{
+    ACTIVE,
+    ARRIVED,
+    IN_MAINTENANCE,
+    GROUNDED,
+    PENDING_INSPECTION,
+    RETIRED
+}
